@@ -8,43 +8,401 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image="/blog.jpeg" />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<div class="hero-copy">
+					<p class="eyebrow">MFG</p>
+					<h1>Mutare&rsquo;s trusted perimeter security partner</h1>
+					<p class="hero-text">Mutare Fence and Gates is your local supplier for premium wire products, fencing systems and gate solutions. We support residential, agricultural and commercial customers with practical security solutions and dependable local service.</p>
+					<div class="hero-actions">
+						<a class="button button-primary" href="#contact">Request a Quote</a>
+						<a class="button button-secondary" href="/about">Learn More</a>
+					</div>
+					<div class="hero-details">
+						<div>
+							<strong>Mission</strong>
+							<p>To be a committed premier customer wire supplier of choice.</p>
+						</div>
+						<div>
+							<strong>Vision</strong>
+							<p>To be the local leader in supplying wire products.</p>
+						</div>
+					</div>
+					<div class="hero-summary">
+						<div>
+							<strong>Address</strong>
+							<p>06 Bvumba Road, Mutare</p>
+						</div>
+						<div>
+							<strong>Local support</strong>
+							<p>Expert advice and fast response from our Mutare team.</p>
+						</div>
+					</div>
+				</div>
+				<div class="hero-image">
+					<img src="/blog.jpeg" alt="Mutare Fence and Gates team photo" />
+				</div>
+			</section>
+
+			<section class="section section-overview">
+				<div class="section-copy">
+					<h2>Professional fencing solutions for every property</h2>
+					<p>Mutare Fence and Gates combines local knowledge with a strong product range to protect homes, farms and businesses. Our team helps customers choose the best fencing and wire solution for the site, budget and security requirements.</p>
+				</div>
+				<div class="section-highlights">
+					<div class="feature-card">
+						<strong>Local expertise</strong>
+						<p>We understand the unique needs of Mutare properties and provide practical fencing guidance.</p>
+					</div>
+					<div class="feature-card">
+						<strong>Quality materials</strong>
+						<p>We supply durable wire, fencing panels and gates selected for strength and long service life.</p>
+					</div>
+					<div class="feature-card">
+						<strong>Customer service</strong>
+						<p>From quote to delivery, we maintain clear communication and a premium customer experience.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="services" class="section section-services">
+				<h2>Our products</h2>
+				<div class="service-grid">
+					<div class="service-card">
+						<h3>Diamond fencing</h3>
+						<p>Reliable perimeter fencing suitable for residential and commercial boundaries.</p>
+					</div>
+					<div class="service-card">
+						<h3>Clear view fencing</h3>
+						<p>Secure, modern fencing with high visibility for open site protection.</p>
+					</div>
+					<div class="service-card">
+						<h3>Barbed wire</h3>
+						<p>Cost-effective deterrent wire for farms, warehouses and property lines.</p>
+					</div>
+					<div class="service-card">
+						<h3>Razor wire</h3>
+						<p>High-security coils designed to strengthen perimeter barriers.</p>
+					</div>
+					<div class="service-card">
+						<h3>Gates</h3>
+						<p>Custom gate solutions for driveways, entrances and industrial access points.</p>
+					</div>
+					<div class="service-card">
+						<h3>Electric fencing</h3>
+						<p>Effective electric systems for security and livestock containment.</p>
+					</div>
+					<div class="service-card">
+						<h3>Palisade</h3>
+						<p>Heavy-duty steel profiling for high-security perimeter protection.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section-difference">
+				<h2>Why customers choose us</h2>
+				<ul class="feature-list">
+					<li>Trusted local supplier with strong community experience.</li>
+					<li>Wide product range for security, agricultural and commercial needs.</li>
+					<li>Personalized recommendations based on real site conditions.</li>
+					<li>Clear pricing, fast responses and reliable local support.</li>
+					<li>Professional quality across materials, delivery and guidance.</li>
+				</ul>
+			</section>
+
+			<section id="contact" class="section section-contact">
+				<div class="contact-panel">
+					<h2>Ready to secure your property?</h2>
+					<p>Contact Mutare Fence and Gates for a personalized quote, product advice or a site consultation. We are ready to support homes, farms and businesses with dependable fencing solutions.</p>
+					<div class="contact-details">
+						<div>
+							<strong>Address</strong>
+							<p>06 Bvumba Road, Mutare</p>
+						</div>
+						<div>
+							<strong>Email</strong>
+							<p><a href="mailto:info@mutarefence.co.zw">info@mutarefence.co.zw</a></p>
+						</div>
+					</div>
+					<a class="button button-primary" href="mailto:info@mutarefence.co.zw">Email Us</a>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	main {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.hero {
+		display: grid;
+		grid-template-columns: 1.1fr 0.9fr;
+		gap: 2.5rem;
+		align-items: center;
+		padding: 4rem 1.5rem;
+		background: linear-gradient(180deg, #f9fbff 0%, #ffffff 100%);
+		border-radius: 32px;
+		margin: 2rem 1rem 0;
+		box-shadow: 0 24px 70px rgba(34, 41, 57, 0.08);
+	}
+
+	.hero-copy {
+		max-width: 650px;
+	}
+
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.25em;
+		font-weight: 700;
+		color: rgb(var(--accent));
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		font-size: clamp(2.75rem, 5vw, 4.5rem);
+		margin: 0;
+		line-height: 1.02;
+	}
+
+	.hero-text {
+		margin: 1.5rem 0 0;
+		font-size: 1.1rem;
+		line-height: 1.85;
+		max-width: 44rem;
+		color: rgb(var(--gray-dark));
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin: 2rem 0 2.5rem;
+	}
+
+	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.95rem 1.8rem;
+		border-radius: 999px;
+		font-weight: 700;
+		text-decoration: none;
+		transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+	}
+
+	.button:hover {
+		transform: translateY(-1px);
+	}
+
+	.button-primary {
+		background: var(--accent);
+		color: white;
+		box-shadow: 0 18px 50px rgba(35, 55, 255, 0.18);
+	}
+
+	.button-secondary {
+		background: rgba(35, 55, 255, 0.08);
+		color: rgb(var(--accent-dark));
+		border: 1px solid rgba(35, 55, 255, 0.18);
+	}
+
+	.hero-details {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.hero-details strong {
+		display: block;
+		font-size: 0.95rem;
+		margin-bottom: 0.35rem;
+	}
+
+	.hero-details p {
+		margin: 0;
+		line-height: 1.7;
+		color: rgb(var(--gray-dark));
+	}
+
+	.hero-summary {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	.hero-summary strong {
+		display: block;
+		font-size: 0.95rem;
+		margin-bottom: 0.35rem;
+	}
+
+	.hero-summary p {
+		margin: 0;
+		line-height: 1.7;
+		color: rgb(var(--gray-dark));
+	}
+
+	.hero-image {
+		position: relative;
+		overflow: hidden;
+		border-radius: 30px;
+	}
+
+	.hero-image::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: rgba(35, 55, 255, 0.32);
+		mix-blend-mode: multiply;
+		pointer-events: none;
+	}
+
+	.hero-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		box-shadow: 0 20px 40px rgba(34, 41, 57, 0.12);
+	}
+
+	.section {
+		padding: 3rem 1.5rem;
+	}
+
+	.section-overview,
+	.section-services,
+	.section-difference,
+	.section-contact {
+		margin: 0 1rem 2rem;
+		background: white;
+		border-radius: 28px;
+		box-shadow: 0 20px 50px rgba(34, 41, 57, 0.05);
+	}
+
+	.section-copy {
+		max-width: 720px;
+	}
+
+	.section h2 {
+		font-size: clamp(2rem, 3vw, 2.75rem);
+		margin-bottom: 1rem;
+	}
+
+	.section-copy p {
+		line-height: 1.85;
+		color: rgb(var(--gray-dark));
+	}
+
+	.section-highlights {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.feature-card,
+	.service-card,
+	.contact-panel {
+		background: rgb(var(--gray-light));
+		padding: 1.75rem;
+		border-radius: 24px;
+	}
+
+	.feature-card strong,
+	.service-card h3 {
+		display: block;
+		margin-bottom: 0.85rem;
+	}
+
+	.feature-card p,
+	.service-card p {
+		margin: 0;
+		line-height: 1.8;
+		color: rgb(var(--gray-dark));
+	}
+
+	.service-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+
+	.feature-list {
+		list-style: none;
+		padding: 0;
+		margin: 1.5rem 0 0;
+		display: grid;
+		gap: 1rem;
+	}
+
+	.feature-list li {
+		padding-left: 1.5rem;
+		position: relative;
+		line-height: 1.8;
+	}
+
+	.feature-list li::before {
+		content: '•';
+		position: absolute;
+		left: 0;
+		color: var(--accent);
+	}
+
+	.contact-panel {
+		display: grid;
+		gap: 1.5rem;
+	}
+
+	.contact-details {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem;
+	}
+
+	.contact-details strong {
+		display: block;
+		margin-bottom: 0.45rem;
+	}
+
+	.contact-details p,
+	.contact-panel p {
+		margin: 0;
+		line-height: 1.8;
+		color: rgb(var(--gray-dark));
+	}
+
+	.contact-panel a {
+		color: white;
+	}
+
+	@media (max-width: 1024px) {
+		.service-grid,
+		.section-highlights,
+		.hero-details,
+		.hero-summary,
+		.contact-details {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 840px) {
+		.hero {
+			grid-template-columns: 1fr;
+			padding: 2.5rem 1rem;
+		}
+		.section {
+			margin: 0 0 2rem;
+		}
+	}
+</style>

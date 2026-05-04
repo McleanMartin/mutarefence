@@ -17,70 +17,121 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 100%;
+				max-width: var(--content-max);
+				padding: 1.5rem 1.25rem 3rem;
 			}
+
+			.page-intro {
+				margin-bottom: 2rem;
+				padding: 1.5rem 1.75rem;
+				background: var(--surface);
+				border: 1px solid var(--border-subtle);
+				border-radius: var(--radius-lg);
+				box-shadow: var(--shadow-md);
+			}
+
+			.page-intro h1 {
+				margin: 0 0 0.5rem;
+				font-size: clamp(1.65rem, 2.5vw, 2rem);
+				letter-spacing: -0.03em;
+			}
+
+			.page-intro p {
+				margin: 0;
+				color: rgb(var(--gray));
+				line-height: 1.6;
+				max-width: 36rem;
+			}
+
 			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 1.25rem;
+				list-style: none;
 				margin: 0;
 				padding: 0;
 			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
+
 			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
+				grid-column: 1 / -1;
 			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
+
 			ul li a {
-				display: block;
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				text-decoration: none;
+				background: var(--surface);
+				border: 1px solid var(--border-subtle);
+				border-radius: var(--radius-md);
+				overflow: hidden;
+				box-shadow: var(--shadow-sm);
+				transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 			}
+
+			ul li a:hover {
+				border-color: var(--border-accent);
+				box-shadow: var(--shadow-md);
+				transform: translateY(-2px);
+			}
+
+			ul li img {
+				width: 100%;
+				aspect-ratio: 2 / 1;
+				object-fit: cover;
+				margin: 0;
+				border-radius: 0;
+			}
+
+			ul li .card-body {
+				padding: 1.1rem 1.25rem 1.25rem;
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				gap: 0.35rem;
+			}
+
+			ul li:first-child img {
+				aspect-ratio: 21 / 9;
+			}
+
 			.title {
 				margin: 0;
 				color: rgb(var(--black));
-				line-height: 1;
+				line-height: 1.25;
+				font-size: 1.15rem;
+				letter-spacing: -0.02em;
 			}
+
+			ul li:first-child .title {
+				font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+			}
+
 			.date {
 				margin: 0;
+				font-size: 0.82rem;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
 				color: rgb(var(--gray));
 			}
-			ul li a:hover h4,
+
+			ul li a:hover .title {
+				color: var(--accent-dark);
+			}
+
 			ul li a:hover .date {
-				color: rgb(var(--accent));
+				color: var(--accent);
 			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
+
 			@media (max-width: 720px) {
 				ul {
-					gap: 0.5em;
+					grid-template-columns: 1fr;
 				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+
+				ul li:first-child img {
+					aspect-ratio: 16 / 10;
 				}
 			}
 		</style>
@@ -89,16 +140,22 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section>
+				<div class="page-intro">
+					<h1>News &amp; updates</h1>
+					<p>Articles and announcements from Mutare Fence and Gates.</p>
+				</div>
 				<ul>
 					{
 						posts.map((post) => (
 							<li>
 								<a href={`/blog/${post.id}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+									<div class="card-body">
+										<p class="date">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+										<h3 class="title">{post.data.title}</h3>
+									</div>
 								</a>
 							</li>
 						))
